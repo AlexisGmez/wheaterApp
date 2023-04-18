@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  height: 100vh;
+  background-image: url('./assets/montain.jpg');
+  
+}
+
+
+@media(min-width: 776px){
+
+  .App{
+    background: url('./assets/forest-Desk.jpg');
+    padding: 1rem;
+  }
+}
