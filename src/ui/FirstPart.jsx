@@ -5,7 +5,7 @@ const FirstPart = ({ data, setData, API_KEY }) => {
 
   const [country, setCountry] = useState('');
   const [lastCountry, setLastCountry] = useState('');
-  
+  const [isCelcius, setIsCelcius] = useState(false);  
 
   const handleChange = (e)=>{
     setCountry(e.target.value)
@@ -49,9 +49,10 @@ const FirstPart = ({ data, setData, API_KEY }) => {
       <h1>{data?.name}</h1>
 
       <div className="temperature__container">
-        <h1>{data?.main.temp}</h1>
-        <button>grades/celsius</button>
-      </div>  
+        <h1>{Math.trunc(!isCelcius ? ((data?.main.temp - 273.15) * 9/5 +32) : (data?.main.temp - 273.15))} {isCelcius?'°C':'°F'}</h1>
+        <button onClick={()=>setIsCelcius(!isCelcius)}>grades/celsius</button>
+      </div> 
+     
 
 
     </div>
